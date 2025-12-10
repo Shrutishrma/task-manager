@@ -37,7 +37,7 @@ db.connect((err) => {
 // Routes
 app.get('/tasks', (req, res) => {
     db.query('SELECT * FROM tasks', (err, results) => {
-        if (err) return res.status(500).json(err);
+        if (err) { console.log ("some error occured "); return res.status(500).json(err)};
         res.json(results);
     });
 });
